@@ -20,6 +20,9 @@ class Transfer
     if sender.balance < @amount
       @status = "rejected"
     else
-      sender
+      sender.deposit(@amount * -1)
+      receiver.deposit(@amount)
+      @status = "complete"
+    end
   end
 end
