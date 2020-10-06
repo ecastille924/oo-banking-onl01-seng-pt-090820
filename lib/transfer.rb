@@ -21,7 +21,7 @@ class Transfer
       @status = "rejected"
     elsif 
       @status = "complete"
-        false
+        puts "Transfer already complete"
     else
       sender.deposit(@amount * -1)
       receiver.deposit(@amount)
