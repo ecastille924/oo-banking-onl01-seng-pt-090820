@@ -22,8 +22,8 @@ class Transfer
       "Transaction rejected. Please check your account balance."
     elsif
       @sender.balance > @amount && status == "pending"
-      @sender.deposit (@amount * -1)
-      @receiver.deposit (@amount)
+      @sender.deposit -= @amount
+      @receiver.deposit += @amount
       @status = "complete"
     end
   end
