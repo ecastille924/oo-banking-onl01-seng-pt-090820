@@ -19,8 +19,8 @@ class Transfer
   end
   
   def execute_transaction
-    if sender.valid? = false
-      @status = "rejected"
+    if @sender.balance < @amount 
+      @status == "rejected"
       "Transaction rejected. Please check your account balance."
     elsif
       @sender.balance > @amount && @status == "pending"
